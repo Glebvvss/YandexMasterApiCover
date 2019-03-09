@@ -3,6 +3,7 @@
 namespace ApiYandexWebmaster\Client;
 
 use ApiYandexWebmaster\Request\RequestBuilder;
+use ApiYandexWebmaster\Response\Response;
 
 class JsonWebMasterClient extends AbstractWebMasterClient
 {
@@ -16,5 +17,11 @@ class JsonWebMasterClient extends AbstractWebMasterClient
         return $this->request
                     ->resourse($this->baseUrl.$this->substituteUserIdToResourseName($resourseName))
                     ->header('Authorization: OAuth '.$this->token);
+    }
+
+    public function prepare($response)
+    {
+        $response = json_decode($response);
+        return new Response($response);
     }
 }
