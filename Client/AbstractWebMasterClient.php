@@ -1,10 +1,10 @@
 <?php 
 
-namespace YandexWebmasterCover\Api;
+namespace ApiYandexWebmaster\Client;
 
-use YandexWebmasterCover\Request\RequestBuilder;
+use ApiYandexWebmaster\Request\RequestBuilder;
 
-abstract class AbstractWebMasterApi
+abstract class AbstractWebMasterClient
 {
     protected $baseUrl = 'https://api.webmaster.yandex.net/v4';
     protected $userId;
@@ -54,5 +54,5 @@ abstract class AbstractWebMasterApi
      * 
      * @return \WebmasterAPI\Request\RequestBuilder
      */
-    abstract public function turnTo($resourseName, $routeParams = []);
+    abstract public function turnTo($resourseName);
 }

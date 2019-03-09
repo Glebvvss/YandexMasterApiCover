@@ -1,6 +1,6 @@
 <?php 
 
-namespace YandexWebmasterCover\Request;
+namespace ApiYandexWebmaster\Request;
 
 class RequestBuilder implements IRequestBuilder
 {
@@ -66,10 +66,7 @@ class RequestBuilder implements IRequestBuilder
 
     public function __call($classMethod, $params)
     {
-        if (! isset($this->request)) {
-            $request = $this->build();
-
-        }
+        $request = $this->build();
         return $request->$classMethod();
     }
 }

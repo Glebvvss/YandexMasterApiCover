@@ -1,9 +1,9 @@
 <?php
 
-namespace YandexWebmasterCover;
+namespace ApiYandexWebmaster;
 
-use YandexWebmasterCover\Api\JsonWebMasterApi;
-use YandexWebmasterCover\Api\XmlWebMasterApi;
+use ApiYandexWebmaster\Client\JsonWebMasterClient;
+use ApiYandexWebmaster\Client\XmlWebMasterClient;
 
 class WebMasterFactory
 {
@@ -15,11 +15,11 @@ class WebMasterFactory
         $type = strtoupper($type);
 
         if ($type === static::JSON_API) {
-            return new JsonWebMasterApi($token);
+            return new JsonWebMasterClient($token);
         }
 
         if ($type === static::XML_API) {
-            return new XmlWebMasterApi($token);
+            return new XmlWebMasterClient($token);
         }
 
         throw new \Exception('Incorrect type of Web Master Api Format');

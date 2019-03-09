@@ -1,17 +1,17 @@
 <?php 
 
-namespace YandexWebmasterCover\Api;
+namespace ApiYandexWebmaster\Client;
 
-use YandexWebmasterCover\Request\RequestBuilder;
+use ApiYandexWebmaster\Request\RequestBuilder;
 
-class JsonWebMasterApi extends AbstractWebMasterApi
+class JsonWebMasterClient extends AbstractWebMasterClient
 {
     public function __construct($token, $baseUrl = null) 
     {
         parent::__construct($token, $baseUrl = null);
     }
 
-    public function turnTo($resourseName, $routeParams = []) 
+    public function turnTo($resourseName) 
     {
         return $this->request
                     ->resourse($this->baseUrl.$this->substituteUserIdToResourseName($resourseName))

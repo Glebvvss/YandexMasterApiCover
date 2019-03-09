@@ -1,6 +1,6 @@
 <?php 
 
-namespace YandexWebmasterCover\Request;
+namespace ApiYandexWebmaster\Request;
 
 interface IRequestBuilder
 {
@@ -78,7 +78,7 @@ interface IRequestBuilder
     /**
      * Создание и возвращение экземпляра класса запроса
      *
-     * @return \YandexWebmasterCover\Request\Request
+     * @return \ApiYandexWebmaster\Request\Request
      */
     public function build();
 

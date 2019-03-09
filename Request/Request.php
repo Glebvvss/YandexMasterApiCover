@@ -1,6 +1,6 @@
 <?php 
 
-namespace YandexWebmasterCover\Request;
+namespace ApiYandexWebmaster\Request;
 
 class Request implements IRequest
 {
